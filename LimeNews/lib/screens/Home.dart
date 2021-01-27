@@ -120,22 +120,78 @@ class _HomeState extends State<Home> {
     showModalBottomSheet(
         context: context,
         builder: (context) {
-          return Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Spacer(),
-                    IconButton(
-                        icon: Icon(Icons.cancel),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        })
-                  ],
+          return Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                  IconButton(
+                    icon: Icon(
+                      Icons.cancel,
+                      color: Colors.green,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  )
+                ],
+              ),
+              Center(
+                child: Text(
+                  'Lime News',
+                  style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 60,
+              ),
+              ListTile(
+                title: Text('Gender'),
+                // trailing: Row(
+                //   children: <Widget>[
+                //     Container(
+                //       width: 60,
+                //       height: 40,
+                //       decoration: BoxDecoration(
+                //         color: Colors.grey,
+                //       ),
+                //       child: Center(
+                //         child: Text('Male'),
+                //       ),
+                //     ),
+                //     Icon(Icons.arrow_forward_ios)
+                //   ],
+                // ),
+              ),
+              Divider(
+                height: 0,
+              ),
+              ListTile(
+                title: Text('Country'),
+                // trailing: Row(
+                //   children: <Widget>[
+                //     Container(
+                //       width: 60,
+                //       height: 40,
+                //       decoration: BoxDecoration(
+                //         color: Colors.grey,
+                //       ),
+                //       child: Center(
+                //         child: Text('Ghana'),
+                //       ),
+                //     ),
+                //     Icon(Icons.arrow_forward_ios)
+                //   ],
+                // ),
+              ),
+              Divider(
+                height: 0,
+              ),
+            ],
           );
         });
   }
