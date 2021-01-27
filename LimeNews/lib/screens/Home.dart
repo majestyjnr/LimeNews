@@ -1,5 +1,7 @@
 import 'package:LimeNews/screens.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -13,30 +15,44 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: 1,
       length: 12,
       child: Scaffold(
         body: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                leading: CircleAvatar(
-                  maxRadius: 25,
-                  backgroundImage: AssetImage('images/solo.jpeg'),
+                leading: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: InkWell(
+                    onTap: () {
+                      _openBottomSheet();
+                    },
+                    child: CircleAvatar(
+                      maxRadius: 20,
+                      backgroundImage: AssetImage('images/solo.jpeg'),
+                    ),
+                  ),
                 ),
                 title: Text(
-                  'Lime',
+                  'Lime News',
                   style: TextStyle(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 ),
+                pinned: true,
+                floating: true,
+                forceElevated: innerBoxIsScrolled,
                 backgroundColor: Colors.white,
                 centerTitle: true,
-                elevation: 0.5,
+                elevation: 1,
                 bottom: TabBar(
+                  indicatorColor: Colors.green,
                   isScrollable: true,
-                  labelColor: Colors.grey,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
                   tabs: <Widget>[
                     Tab(
                       text: 'FOLLOW',
@@ -98,5 +114,29 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+  _openBottomSheet() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Spacer(),
+                    IconButton(
+                        icon: Icon(Icons.cancel),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        })
+                  ],
+                ),
+              ],
+            ),
+          );
+        });
   }
 }
