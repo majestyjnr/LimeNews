@@ -1,4 +1,5 @@
 import 'package:LimeNews/screens.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Lime News',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
         accentColor: Colors.green,
@@ -35,27 +37,62 @@ class _HomescreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-      ),
+      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
+        currentIndex: _currentIndex,
         showSelectedLabels: true,
         onTap: (index) {
-          _currentIndex = index;
+          setState(() {
+            _currentIndex = index;
+          });
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.home),
-            title: Text('Home'),
+            icon: (_currentIndex == 0)
+                ? Icon(
+                    CupertinoIcons.refresh_circled_solid,
+                    size: 18,
+                  )
+                : Icon(
+                    FontAwesomeIcons.home,
+                    size: 18,
+                  ),
+            title: Padding(
+              padding: const EdgeInsets.only(
+                top: 3,
+              ),
+              child: (_currentIndex == 0)
+                  ? Text(
+                      'Refresh',
+                      style: TextStyle(
+                        fontSize: 13,
+                      ),
+                    )
+                  : Text(
+                      'Home',
+                      style: TextStyle(
+                        fontSize: 13,
+                      ),
+                    ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.user),
-            title: Text('Me'),
+            icon: Icon(
+              FontAwesomeIcons.user,
+              size: 18,
+            ),
+            title: Padding(
+              padding: const EdgeInsets.only(
+                top: 3,
+              ),
+              child: Text(
+                'Me',
+                style: TextStyle(
+                  fontSize: 13,
+                ),
+              ),
+            ),
           ),
         ],
       ),
