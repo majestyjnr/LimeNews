@@ -1,2 +1,14 @@
 export 'screens/Home.dart';
 export 'screens/Me.dart';
+export 'screens/tabs/Audio.dart';
+export 'screens/tabs/Beauty.dart';
+export 'screens/tabs/Business.dart';
+export 'screens/tabs/Entertainment.dart';
+export 'screens/tabs/Follow.dart';
+export 'screens/tabs/ForYou.dart';
+export 'screens/tabs/LifeStyle.dart';
+export 'screens/tabs/Literature.dart';
+export 'screens/tabs/News.dart';
+export 'screens/tabs/Relationship.dart';
+export 'screens/tabs/Sport.dart';
+export 'screens/tabs/Technology.dart';

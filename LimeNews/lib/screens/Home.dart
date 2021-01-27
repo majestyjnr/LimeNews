@@ -19,12 +19,24 @@ class _HomeState extends State<Home> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                title: Text('Lime'),
+                leading: CircleAvatar(
+                  maxRadius: 25,
+                  backgroundImage: AssetImage('images/solo.jpeg'),
+                ),
+                title: Text(
+                  'Lime',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                backgroundColor: Colors.white,
                 centerTitle: true,
                 elevation: 0.5,
                 bottom: TabBar(
                   isScrollable: true,
-                  labelColor: Colors.white,
+                  labelColor: Colors.grey,
                   tabs: <Widget>[
                     Tab(
                       text: 'FOLLOW',
@@ -69,18 +81,18 @@ class _HomeState extends State<Home> {
           },
           body: TabBarView(
             children: [
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
-             Me(),
+              Follow(),
+              ForYou(),
+              News(),
+              Audio(),
+              Literature(),
+              Entertainment(),
+              Relationship(),
+              Sport(),
+              LifeStyle(),
+              Beauty(),
+              Business(),
+              Technology(),
             ],
           ),
         ),
