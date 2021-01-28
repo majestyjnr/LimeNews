@@ -151,42 +151,12 @@ class _HomeState extends State<Home> {
               ),
               ListTile(
                 title: Text('Gender'),
-                // trailing: Row(
-                //   children: <Widget>[
-                //     Container(
-                //       width: 60,
-                //       height: 40,
-                //       decoration: BoxDecoration(
-                //         color: Colors.grey,
-                //       ),
-                //       child: Center(
-                //         child: Text('Male'),
-                //       ),
-                //     ),
-                //     Icon(Icons.arrow_forward_ios)
-                //   ],
-                // ),
               ),
               Divider(
                 height: 0,
               ),
               ListTile(
                 title: Text('Country'),
-                // trailing: Row(
-                //   children: <Widget>[
-                //     Container(
-                //       width: 60,
-                //       height: 40,
-                //       decoration: BoxDecoration(
-                //         color: Colors.grey,
-                //       ),
-                //       child: Center(
-                //         child: Text('Ghana'),
-                //       ),
-                //     ),
-                //     Icon(Icons.arrow_forward_ios)
-                //   ],
-                // ),
               ),
               Divider(
                 height: 0,

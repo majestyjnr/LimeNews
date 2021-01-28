@@ -12,3 +12,7 @@ export 'screens/tabs/News.dart';
 export 'screens/tabs/Relationship.dart';
 export 'screens/tabs/Sport.dart';
 export 'screens/tabs/Technology.dart';
+export 'screens/tabs/Technology.dart';
+export 'screens/profiletabs/comments.dart';
+export 'screens/profiletabs/favourites.dart';
+export 'screens/profiletabs/following.dart';
